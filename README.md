@@ -65,28 +65,45 @@ User.cs / UserManager.cs – zarządzanie użytkownikami.
 
 
 Diagram klas UML:
-+------------------+
-|    Form1         |
-+------------------+
-| + SetLoggedInUser()
-| + AddReservation()
-| + Logout()
-| + Buttons (Login, Register, CreateReservation, ViewReservations)
-+------------------+
-         |
-         |
-+------------------+       +-----------------+       +-------------------+
-|   User           |       |  Movie           |       | TicketReservation  |
-+------------------+       +-----------------+       +-------------------+
-| Username         |       | Title            |       | MovieTitle         |
-| Password         |       | Genre            |       | CustomerName       |
-| Role             |       | Description      |       | SeatNumber         |
-+------------------+       | ScreeningDate    |       | ReservationDate    |
-                            +-----------------+       +-------------------+
 
-+---------------------+
-| ReservationManager  |
-+---------------------+
-| + AddReservation()  |
-| + GetReservations() |
-+---------------------+
+Form1
+├── SetLoggedInUser(user: User)
+├── AddReservation(reservation: TicketReservation)
+├── Logout()
+├── Przyciski:
+│   ├── loginButton
+│   ├── registerButton
+│   ├── createReservationButton
+│   ├── viewReservationsButton
+│   ├── changePasswordButton
+│   ├── logoutButton
+│   ├── manageRepertoireButton
+│   └── closeButton
+
+User
+├── Username: string
+├── Password: string
+├── Role: string ("User" lub "Admin")
+
+UserManager
+├── AddUser(user: User)
+├── Authenticate(username: string, password: string)
+
+Movie
+├── Title: string
+├── Genre: string
+├── Description: string
+├── ScreeningDate: DateTime
+
+TicketReservation
+├── MovieTitle: string
+├── CustomerName: string
+├── SeatNumber: int
+├── ReservationDate: DateTime
+├── CreateReservation(customerName: string)
+├── DeleteReservation(customerName: string)
+
+ReservationManager
+├── AddReservation(reservation: TicketReservation)
+├── GetReservations(): List<TicketReservation>
+
