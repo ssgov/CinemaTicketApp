@@ -1,0 +1,12 @@
+[
+  {
+    "Username": "admin",
+    "PasswordHash": "$2a$11$LKbqZr0Gd8BHWQzjaRQGv.cCmIjdNvBBolGfElljbEciMrQM8YqzW",
+    "Role": "Admin"
+  },
+  {
+    "Username": "adam",
+    "PasswordHash": "$2a$11$OMv0fLnStyoAEwSLzoCfmumNcd1UEAMx5SF9DzdhbYxZbqXYQ.NOK",
+    "Role": "User"
+  }
+]
