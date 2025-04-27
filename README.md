@@ -106,4 +106,3 @@ TicketReservation
 ReservationManager
 ├── AddReservation(reservation: TicketReservation)
 ├── GetReservations(): List<TicketReservation>
-
